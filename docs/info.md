@@ -9,12 +9,25 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-Explain how your project works
+This project implements a simple I2C master controller.
+
+When the START input is asserted, the controller begins transmitting an 8-bit data value serially over the SDA line while generating the SCL clock.
+
+The controller generates:
+
+START condition
+8-bit serial transmission
+STOP condition
+The BUSY output indicates an active transfer.
 
 ## How to test
 
-Explain how to use your project
+Apply reset.
+Place an 8-bit value on ui_in.
+Assert START.
+Observe SCL and SDA activity.
+Monitor BUSY until transmission completes.
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+An I2C slave device, logic analyzer, or oscilloscope may be connected to observe SDA and SCL signals.
